@@ -41,6 +41,10 @@ http://dotinstall.com/lessons/basic_enchant_js_v2
 
 ## 追加説明
 
+todo: ブラウザへのドラッグ＆ドロップ
+
+todo: ブラウザのリロードの話
+
 ### ■window.onload()
 プログラムが始まることを表す **window.onload()** は **Scratch** の「緑の旗がクリックされたら」みたいなものと考えてください。
 
