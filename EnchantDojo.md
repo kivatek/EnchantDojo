@@ -272,6 +272,6 @@ timelineの指定をつなげて書いていくスタイルについての説明
 
 
 # 脚注
-[lesson04-01]: https://github.com/kivatek/EnchantDojo/images/lesson04-01.png "図4-1"
+[lesson04-01]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson04-01.png "図4-1"
 
 
