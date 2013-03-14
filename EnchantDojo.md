@@ -102,6 +102,8 @@ todo: フレームという単語がいきなり出てくるので、ぱらぱ�
 
 todo: if (this.x > 320) {} についての補足。
 
+![alt '図4-1'][lesson04-01]
+
 todo: Scratchでいうところの「はしにさわったら」
 
 # レッスン５
@@ -267,3 +269,8 @@ timelineの指定をつなげて書いていくスタイルについての説明
 
 
 # エクストラ
+
+
+# 脚注
+[lesson04-01]: https://github.com/kivatek/EnchantDojo/images/lesson04-01.png "図4-1"
+
