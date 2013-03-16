@@ -61,8 +61,11 @@ enchant.jsの最新版をダウンロードする手順について補足。zip�
 
 ### ■JavaScriptコンソールの開き方
 JavaScriptコンソールの開き方は使用しているブラウザによって違います。
+以下の図はChromeとFirefoxでどのようにメニューをたどるとコンソールを表示できるかを説明した物です。
    * Chrome 25では「ツール→JavaScriptコンソール」
+![alt "図2-3"][lesson02-03]
    * Firefox 19では「Web開発→Webコンソール」
+![alt "図2-4"][lesson02-04]
 
 # レッスン３
 
@@ -78,16 +81,23 @@ CoreやrootScene、Spriteの説明をしたのちにまずはクマの画像を�
 
 ## 追加説明
 
+画像ファイルが置いてあるフォルダの補足
+
 ### ■Scene
 Scratchのステージとは違う。ステージとスプライトを合わせたもの？
 
 ### ■ゲーム画面のサイズ
 new Core(320, 320)の320についての話。
 
-座標系の話。x, yがどちらに増えていくのか。簡単な画像を用意する。
+### ■座標系の話
+x, yがどちらに増えていくのか。簡単な画像を用意する。
+0オリジンであること
+見える範囲の最大値は(319、319)であること
 
 SpriteをrootSceneに乗せると表現していることの補足
+ツリー構造を図解した方がよいか？
 
+addChildとは？
 Scratchと違ってSpriteが最初から表示されているわけではないこと。
 
 ゲーム画面の有効範囲がわかりづらいので背景に色をつけてみる話。
@@ -154,7 +164,6 @@ ageの説明補完。動き始めてからのフレーム数とは？
 ## 追加説明
 
 動画でも触れているがaddEventListenerの代わりにonと書いてもよい点を改めて説明。
-
 タイプミスが減るのでこちらがよいと言ってもよさそう。
 
 core.rootSceneへイベントをアタッチしているが、複雑なゲームを作る場合には別の方法がよいということを説明しておく。
@@ -268,7 +277,7 @@ randomの範囲について補足するかどうか。
 
 []と使うことで入れ物の用意をしていることを説明。画像としてはクッキーの箱とか？
 
-opacityが0から1の間の値をとるので１００で割るということについて補足。
+透明度opacityが0から1の間の値をとるので１００で割るということについて補足。
 この場合はMath.randomの結果をそのまま使ってもいいのではないだろうか？
 
 
@@ -295,10 +304,17 @@ timelineの指定をつなげて書いていくスタイルについての説明
 
 # エクストラ
 
-## Groupをうまく使う。
+## Groupをうまく使う
 重ね合わせをコントロールする話。
-キャラクタが建物の影に隠れるＲＰＧ風サンプルプログラムの用意。手持ちのを再構成する。
+キャラクタが建物の影に隠れるＲＰＧ風サンプルプログラムの用意。手持ちのコードを再構成する。
 
+Group自体の座標を動かすことでそのGroupにaddChildされているスプライトの表示位置を一気に動かすことができる。
+→メニューや点数表示のレイアウト調整に役立つ
+
+## より複雑なtimelineの使い方
+* and()
+* then()
+* repeat()
 
 ## 9leap.netにゲームを投稿する
 必要になるファイル。
@@ -306,13 +322,19 @@ timelineの指定をつなげて書いていくスタイルについての説明
 * start.png
 * end.png
 
+start.png、end.pngを置くフォルダ階層に注意する。
+
 zipファイルの作成。
 
 gruntの話。
 
 # 脚注
+
+# 図一覧
 [lesson02-01]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson02-01.png "図2-1"
 [lesson02-02]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson02-02.png "図2-2"
+[lesson02-03]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson02-03.png "図2-3"
+[lesson02-04]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson02-04.png "図2-4"
 [lesson04-01]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson04-01.png "図4-1"
 
 
