@@ -224,7 +224,10 @@ core.frame / core.fpsについて補足説明。fpsは１秒間に何枚の絵�
 
 label.textへの代入をコメントアウトしたことで、intersectのif文は残っているのに機能しなくなることを補足。
 
-intersectとwithinの違いをアウトラインを表示した画像もしくはプログラムで説明する。
+### デモプログラム
+intersectとwithinの動きを同時に見ることが出来るプログラムを用意しました。
+プログラムはちょっと複雑に見えるかもしれませんが、内容はドットインストールで紹介されているものに準じています。
+https://github.com/kivatek/EnchantCollisionDemo
 
 # レッスン９
 
