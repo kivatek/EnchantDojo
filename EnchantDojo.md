@@ -226,7 +226,9 @@ label.textへの代入をコメントアウトしたことで、intersectのif�
 
 ### デモプログラム
 intersectとwithinの動きを同時に見ることが出来るプログラムを用意しました。
+
 プログラムはちょっと複雑に見えるかもしれませんが、内容はドットインストールで紹介されているものに準じています。
+
 https://github.com/kivatek/EnchantCollisionDemo
 
 # レッスン９
@@ -308,11 +310,31 @@ randomの範囲について補足するかどうか。
 easingについての説明。
 http://wise9.github.com/enchant.js/doc/core/ja/symbols/enchant.Easing.html
 
-文字だけだと分かりづらいので変動曲線の図解もしくは動きを表現するためだけのサンプルプログラムの用意。
+Easingの動きの違いがわかるサンプルプログラムを用意しています。
+
+なおサンプルで紹介しているのはたくさん用意されているEasingの一部の種類のみです。
+
+https://github.com/kivatek/EnchantEasingDemo
 
 timelineの指定をつなげて書いていくスタイルについての説明。
-つなげない書き方も可能であることを補足。
 
+timelineの指定をつなげて書く書き方の例。
+```javascript
+    ball.tl.moveTo(80, 240, 48, enchant.Easing.BOUNCE_EASEOUT).
+        then(function() {
+            ball.y = 80;
+        }).
+        loop();
+```
+
+timelineの指定をつなげない書き方の例。
+```javascript
+    ball.tl.moveTo(80, 240, 48, enchant.Easing.BOUNCE_EASEOUT);
+    ball.tl.then(function() {
+        ball.y = 80;
+    });
+    ball.loop();
+```
 
 # エクストラ
 
