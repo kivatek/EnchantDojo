@@ -90,15 +90,32 @@ CoreやrootScene、Spriteの説明をしたのちにまずはクマの画像を�
 ### ■Scene
 Scratchのステージとは違う。ステージとスプライトを合わせたもの？
 
-### ■ゲーム画面のサイズ
-new Core(320, 320)の320についての話。
+### new Core(320, 320)の320についての話。
+これはゲームを作る上でゲーム中に表示するものが見える範囲のサイズを指定しています。
 
-### ■座標系の話
-x, yがどちらに増えていくのか。簡単な画像を用意する。
-0オリジンであること
-見える範囲の最大値は(319、319)であること
+このドキュメントではこの見える範囲のことをゲーム画面と呼ぶことにします。
 
-SpriteをrootSceneに乗せると表現していることの補足
+なお320ではなく好きなサイズを指定することもできます。
+
+もしゲーム投稿サイト9leap.netでゲームを公開したいのであれば320を指定してください。
+
+### ■スプライトの表示位置
+スプライトの表示位置はx座標、y座標という二つの値で指定します。
+
+ゲーム画面においては画面の左上がx=0、y=0の座標となります。この座標は原点ということもあります。
+
+このように座標の指定は0から始まるため、320✕320サイズのゲーム画面におさまる座標の最大の値はx=319、y=319です。
+
+スプライトが画面内に表示されているかどうかを判定する場合などに備えてこのルールを覚えておいてください。
+
+次の図はxyの値を増やした場合に画面のどの方向に移動していくのかを表したものです。
+
+スプライトはxの値を増やすと画面の右側へ、yの値を増やすと画面の左側へ移動していきます。
+
+![alt "図3-1"][lesson03-01]
+
+
+### SpriteをrootSceneに乗せると表現していることの補足
 ツリー構造を図解した方がよいか？
 
 addChildとは？
@@ -371,6 +388,7 @@ gruntの話。
 [lesson02-02]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson02-02.png "図2-2"
 [lesson02-03]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson02-03.png "図2-3"
 [lesson02-04]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson02-04.png "図2-4"
+[lesson03-01]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson03-01.png "図3-1"
 [lesson04-01]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson04-01.png "図4-1"
 [lesson04-02]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson04-02.png "図4-2"
 
