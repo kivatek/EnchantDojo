@@ -22,7 +22,7 @@
 *****
 
 # レッスン１
-■ ドットインストールで紹介されている内容
+
 ## [#01 enchant.jsとはなにか？](http://dotinstall.com/lessons/basic_enchant_js_v2/11501 "enchant.jsとはなにか？")
 国産のゲーム開発用フレームワークである **enchant.js** について、その概要、公式サイト、必要となる知識やツールなどを解説していきます。
 * 概要
@@ -31,7 +31,7 @@
 * 必要となるツール
 
 # レッスン２
-■ ドットインストールで紹介されている内容
+
 ## [#02 開発の準備を進めよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11502 "開発の準備を進めよう")
 最新版をダウンロードしたのちに必要なファイルを取り出し、開発の準備を進めていきます。
 * 必要なファイルの準備
@@ -96,7 +96,7 @@ JavaScriptコンソールの開き方は使用しているブラウザによっ�
 ![alt "図2-6"][lesson02-06]
 
 # レッスン３
-■ ドットインストールで紹介されている内容
+
 ## [#03 クマを表示してみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11503 "クマを表示してみよう")
 CoreやrootScene、Spriteの説明をしたのちにまずはクマの画像を表示してみます。
 * Core、rootScene、Sprite
@@ -153,7 +153,7 @@ Scratchと違ってSpriteが最初から表示されているわけではない�
 ゲーム画面の有効範囲がわかりづらいので背景に色をつけてみる話。
 
 # レッスン４
-■ ドットインストールで紹介されている内容
+
 ## [#04 クマを動かしてみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11504 "クマを動かしてみよう")
 enterframeイベントを使ってクマを移動・回転・拡大させてみます。
 * enterframeイベント
@@ -202,7 +202,7 @@ Scratchで近い動きを表現すると次のようなスクリプトになる�
 https://github.com/kivatek/EnchantCoordDemo
 
 # レッスン５
-■ ドットインストールで紹介されている内容
+
 ## [#05 アニメーションを作ってみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11505 "アニメーションを作ってみよう")
 Spriteのframeを操作することでアニメーションを実現していきます。
 * Spriteのframe
@@ -221,9 +221,9 @@ enchant.jsのスプライトは動いているように見える何枚かの画�
 次のプログラムは画像chara1.pngから横32ピクセル、縦32ピクセルのサイズで画像を切り分けながらスプライトとして表示する例です。
 
 ```javascript
-    var bear = new Sprite(32,32);
-    bear.image = core.assets['chara1.png'];
-    bear.frame = 0;
+var bear = new Sprite(32,32);
+bear.image = core.assets['chara1.png'];
+bear.frame = 0;
 ```
 
 スプライトを表示する際、何番目のフレームを表示するかを指定することができます。
@@ -257,7 +257,7 @@ enchant.jsのスプライトは動いているように見える何枚かの画�
 
 
 # レッスン６
-■ ドットインストールで紹介されている内容
+
 ## [#06 クマを操作してみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11506 "クマを操作してみよう")
 矢印キーやタッチイベントでクマを動かしてみましょう。
 * 上左右キーの入力
@@ -265,18 +265,26 @@ enchant.jsのスプライトは動いているように見える何枚かの画�
 * Coreのタッチイベント
 
 ## 追加説明
+### 名前が違っても同じように動くメソッド
+動画でも説明がありますがaddEventListenerという長いメソッド名の代わりにonと書いても同じように動きます。
 
-動画でも触れているがaddEventListenerの代わりにonと書いてもよい点を改めて説明。
-タイプミスが減るのでこちらがよいと言ってもよさそう。
+難しく考えずに短いメソッド名onを使うと良いでしょう。
 
-core.rootSceneへイベントをアタッチしているが、複雑なゲームを作る場合には別の方法がよいということを説明しておく。
-エクストラでGroupを話題に出す。
+### タッチの情報を誰が受け取るか
+ドットインストールのサンプルではタッチ情報をcore.rootSceneが受け取るようにプログラムされています。
 
-eがeventのeであることを説明する。eventとは何かが起こったことおよびその起こったことに関連する情報をまとめたものであることを説明。
+サンプルのように簡単なプログラムであれば問題ないのですが、実際にゲームを作る場合にはcore.rootSceneを直接扱うのは避けた方がよいでしょう。
+
+ではどうするかはエクストラの項目で説明します。
+
+### 「e」って何？
+eはeventの頭文字のeです。
+
+enchant.jsにおけるeventとは何かが起こったことおよびその起こったことに関連する情報が詰まった宅配便とイメージしてください。
 
 APIドキュメントのEventを見てみることを補足。
 
-消えたクマの復活は？後ほどのレッスン？
+### 消えたクマの復活
 後のレッスンで説明が無いようなのでこの段階で補足する。
 
 見えなくするだけであればvisible=falseにする手段もある。この場合はタッチイベントに反応し続けることを説明。
@@ -284,7 +292,7 @@ APIドキュメントのEventを見てみることを補足。
 
 
 # レッスン７
-■ ドットインストールで紹介されている内容
+
 ## [#07 ラベルを表示してみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11507 "ラベルを表示してみよう")
 ラベルを作成し、経過時間を表示させてみます。
 * ラベルの作成
@@ -303,7 +311,7 @@ core.frame / core.fpsについて補足説明。fpsは１秒間に何枚の絵�
 
 
 # レッスン８
-■ ドットインストールで紹介されている内容
+
 ## [#08 衝突判定をしてみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11508 "衝突判定をしてみよう")
 もう一つのクマを作り、キャラクター同士の衝突判定をしてみます。
 * enemyの作成
@@ -322,7 +330,7 @@ intersectとwithinの動きを同時に見ることが出来るプログラム�
 https://github.com/kivatek/EnchantCollisionDemo
 
 # レッスン９
-■ ドットインストールで紹介されている内容
+
 ## [#09 ゲームオーバー処理をしてみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11509 "ゲームオーバー処理をしてみよう")
 ゲームの停止方法、Sceneの作成・追加方法について学びます。
 * Sceneの作成
@@ -343,7 +351,7 @@ pushSceneの動きを図解する。スタックの説明図みたいな感じ�
 代わりにcore.end()を使用することで点数やコメントの登録を行えるようになります。
 
 # レッスン１０
-■ ドットインストールで紹介されている内容
+
 ## [#10 クラスを作ってみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11510 "クラスを作ってみよう")
 Spriteを拡張し、自分でクラスを作る方法を学びます。
 * クラスの作成方法
@@ -359,7 +367,7 @@ sceneへの追加はinitializeの中ではなく生成後に明示的に行っ�
 
 
 # レッスン１１
-■ ドットインストールで紹介されている内容
+
 ## [#11 クマをたくさん表示させてみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11511 "クマをたくさん表示させてみよう")
 クラスを使ってたくさんのクマを表示させてみます。
 * 乱数生成の関数を作成
@@ -383,7 +391,7 @@ randomの範囲について補足するかどうか。
 
 
 # レッスン１２
-■ ドットインストールで紹介されている内容
+
 ## [#12 Timelineを使ってみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11512 "Timelineを使ってみよう")
 アニメーションに特化したクラス、Timelineを使う方法について学びます。
 * tl.moveBy()
@@ -403,20 +411,20 @@ https://github.com/kivatek/EnchantEasingDemo
 
 timelineの指定をつなげて書く書き方の例。
 ```javascript
-    ball.tl.moveTo(80, 240, 48, enchant.Easing.BOUNCE_EASEOUT).
-        then(function() {
-            ball.y = 80;
-        }).
-        loop();
+ball.tl.moveTo(80, 240, 48, enchant.Easing.BOUNCE_EASEOUT).
+    then(function() {
+        ball.y = 80;
+    }).
+    loop();
 ```
 
 timelineの指定をつなげない書き方の例。
 ```javascript
-    ball.tl.moveTo(80, 240, 48, enchant.Easing.BOUNCE_EASEOUT);
-    ball.tl.then(function() {
-        ball.y = 80;
-    });
-    ball.loop();
+ball.tl.moveTo(80, 240, 48, enchant.Easing.BOUNCE_EASEOUT);
+ball.tl.then(function() {
+    ball.y = 80;
+});
+ball.loop();
 ```
 
 # エクストラ
