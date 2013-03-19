@@ -2,10 +2,10 @@
 
 ## 概要
 このドキュメントは [ドットインストール](http://dotinstall.com/ "ドットインストール") というサイトで公開されている「 [enchant.js入門](http://dotinstall.com/lessons/basic_enchant_js_v2 "enchant.js入門") 」に追加説明をするものです。
+
 比較対象として [Scratch](http://scratch.mit.edu/ "Scratch") の事例を参照しますのでScratchを使ったことのない人は先にScratchを体験しておくとよいかもしれません。
 
-またパソコン操作の基礎知識があることを前提としていますので、パソコンの操作については細かく説明しません。ご了承ください。
-
+またパソコン操作の基礎知識があることを前提としています。パソコンの操作については細かく説明しません。ご了承ください。
 
 
 ## 必要な環境
@@ -16,17 +16,14 @@
 
 
 ## 利用する教材
+* ドットインストール [enchant.js入門](http://dotinstall.com/lessons/basic_enchant_js_v2 "enchant.js入門")
 
-* ドットインストール enchant.js入門
-
-http://dotinstall.com/lessons/basic_enchant_js_v2
 
 *****
 
 # レッスン１
-
+http://dotinstall.com/lessons/basic_enchant_js_v2/11501
 ### ドットインストールで紹介されている内容
-
 #### #01 enchant.jsとはなにか？
 国産のゲーム開発用フレームワークである **enchant.js** について、その概要、公式サイト、必要となる知識やツールなどを解説していきます。
 * 概要
@@ -35,9 +32,8 @@ http://dotinstall.com/lessons/basic_enchant_js_v2
 * 必要となるツール
 
 # レッスン２
-
+http://dotinstall.com/lessons/basic_enchant_js_v2/11502
 ### ドットインストールで紹介されている内容
-
 #### #02 開発の準備を進めよう
 最新版をダウンロードしたのちに必要なファイルを取り出し、開発の準備を進めていきます。
 * 必要なファイルの準備
@@ -103,9 +99,8 @@ JavaScriptコンソールの開き方は使用しているブラウザによっ�
 ![alt "図2-6"][lesson02-06]
 
 # レッスン３
-
+http://dotinstall.com/lessons/basic_enchant_js_v2/11503
 ### ドットインストールで紹介されている内容
-
 #### #03 クマを表示してみよう
 CoreやrootScene、Spriteの説明をしたのちにまずはクマの画像を表示してみます。
 * Core、rootScene、Sprite
@@ -162,9 +157,8 @@ Scratchと違ってSpriteが最初から表示されているわけではない�
 ゲーム画面の有効範囲がわかりづらいので背景に色をつけてみる話。
 
 # レッスン４
-
+http://dotinstall.com/lessons/basic_enchant_js_v2/11504
 ### ドットインストールで紹介されている内容
-
 #### #04 クマを動かしてみよう
 enterframeイベントを使ってクマを移動・回転・拡大させてみます。
 * enterframeイベント
@@ -207,9 +201,8 @@ Scratchで表現すると次のスクリプトが近い動きをすると思い�
 https://github.com/kivatek/EnchantCoordDemo
 
 # レッスン５
-
+http://dotinstall.com/lessons/basic_enchant_js_v2/11505
 ### ドットインストールで紹介されている内容
-
 #### #05 アニメーションを作ってみよう
 Spriteのframeを操作することでアニメーションを実現していきます。
 * Spriteのframe
@@ -264,9 +257,8 @@ enchant.jsのスプライトは動いているように見える何枚かの画�
 
 
 # レッスン６
-
+http://dotinstall.com/lessons/basic_enchant_js_v2/11506
 ### ドットインストールで紹介されている内容
-
 #### #06 クマを操作してみよう
 矢印キーやタッチイベントでクマを動かしてみましょう。
 * 上左右キーの入力
@@ -293,9 +285,8 @@ APIドキュメントのEventを見てみることを補足。
 
 
 # レッスン７
-
+http://dotinstall.com/lessons/basic_enchant_js_v2/11507
 ### ドットインストールで紹介されている内容
-
 #### #07 ラベルを表示してみよう
 ラベルを作成し、経過時間を表示させてみます。
 * ラベルの作成
@@ -314,9 +305,8 @@ core.frame / core.fpsについて補足説明。fpsは１秒間に何枚の絵�
 
 
 # レッスン８
-
+http://dotinstall.com/lessons/basic_enchant_js_v2/11508
 ### ドットインストールで紹介されている内容
-
 #### #08 衝突判定をしてみよう
 もう一つのクマを作り、キャラクター同士の衝突判定をしてみます。
 * enemyの作成
@@ -335,9 +325,8 @@ intersectとwithinの動きを同時に見ることが出来るプログラム�
 https://github.com/kivatek/EnchantCollisionDemo
 
 # レッスン９
-
+http://dotinstall.com/lessons/basic_enchant_js_v2/11509
 ### ドットインストールで紹介されている内容
-
 #### #09 ゲームオーバー処理をしてみよう
 ゲームの停止方法、Sceneの作成・追加方法について学びます。
 * Sceneの作成
@@ -355,9 +344,8 @@ pushSceneの動きを図解する。スタックの説明図みたいな感じ�
 core.stop()について。9leapに投稿するゲームの場合は使わない。使うのはend。
 
 # レッスン１０
-
+http://dotinstall.com/lessons/basic_enchant_js_v2/11510
 ### ドットインストールで紹介されている内容
-
 #### #10 クラスを作ってみよう
 Spriteを拡張し、自分でクラスを作る方法を学びます。
 * クラスの作成方法
@@ -373,9 +361,8 @@ sceneへの追加はinitializeの中ではなく生成後に明示的に行っ�
 
 
 # レッスン１１
-
+http://dotinstall.com/lessons/basic_enchant_js_v2/11511
 ### ドットインストールで紹介されている内容
-
 #### #11 クマをたくさん表示させてみよう
 クラスを使ってたくさんのクマを表示させてみます。
 * 乱数生成の関数を作成
@@ -398,7 +385,7 @@ randomの範囲について補足するかどうか。
 この場合はMath.randomの結果をそのまま使ってもいいのではないだろうか？
 
 
-# レッスン１２
+# [レッスン１２](http://dotinstall.com/lessons/basic_enchant_js_v2/11512 "レッスン１２")
 
 ### ドットインストールで紹介されている内容
 
