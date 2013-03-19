@@ -4,6 +4,7 @@
 このドキュメントは [ドットインストール](http://dotinstall.com/ "ドットインストール") というサイトで公開されている「 [enchant.js入門](http://dotinstall.com/lessons/basic_enchant_js_v2 "enchant.js入門") 」に追加説明をするものです。
 比較対象として [Scratch](http://scratch.mit.edu/ "Scratch") の事例を参照しますのでScratchを使ったことのない人は先にScratchを体験しておくとよいかもしれません。
 
+またパソコン操作の基礎知識があることを前提としていますので、パソコンの操作については細かく説明しません。ご了承ください。
 
 
 
@@ -45,31 +46,61 @@ http://dotinstall.com/lessons/basic_enchant_js_v2
 
 ## 追加説明
 
-プロジェクトフォルダの作成についての話。
+### プログラム作成用フォルダの用意
 
-enchant.jsの最新版をダウンロードする手順について補足。zipファイルの展開についてなど。
+### enchant.jsの最新版をダウンロードするには
 
-ブラウザへのドラッグ＆ドロップで動かす話。
+enchant.jsの公式ページ http://enchantjs.com/ja/ をブラウザで表示します。
 
-ソースファイルを書き換えた後などに行うブラウザリロードの話。
+画面の上の方の「Download」をクリックします。次の図の矢印の先です。
 
-### ■window.onload()
-プログラムが始まることを表すwindow.onload()はScratchの「緑の旗がクリックされたら」みたいなものと考えてください。
-onloadとは「ファイルが読み込まれたとき」といった意味です。
+![alt "図2-1"][lesson02-01]
+
+（青いDownloadボタンでもダウンロードページへ移動できるのですが、こちらの方は英語のページへ移動してしまようです。2013/03/19現在）
+
+ダウンロードページへ移動したら青いDownloadボタンを押すことでダウンロードが始まります。
+
+次の図の矢印の先です。
 
 ![alt "図2-2"][lesson02-02]
 
+### ダウンロードしたファイルを使えるようにする
 
-### ■JavaScriptコンソールの開き方
+ダウンロードしたファイルをまずは先ほど作成したプログラム作成用のフォルダに移動しましょう。
+
+ダウンロードしたファイルはzipファイルという形式になっています。
+
+このままでは使用できませんので「展開」する必要があります。
+
+zipファイルの展開は、
+
+    * Macではファイルをダブルクリック
+    * Windowsではファイルを右クリックした後に表示されるメニューから「ここへ展開」を選択します。
+
+### 自分のプログラム用フォルダの用意
+
+### 自分のプログラムを動かす
+index.htmlをブラウザへドラッグ＆ドロップすることで動かすことができます。
+
+プログラムを書き換えた後にはブラウザをリロードして動作を確認します。
+
+### window.onload()
+プログラムが始まることを表すwindow.onload()はScratchの「緑の旗がクリックされたら」みたいなものと考えてください。
+onloadとは「ファイルが読み込まれたとき」といった意味です。
+
+![alt "図2-4"][lesson02-04]
+
+
+### JavaScriptコンソールの開き方
 JavaScriptコンソールの開き方は使用しているブラウザによって違います。
 以下の図はChromeとFirefoxでどのようにメニューをたどるとコンソールを表示できるかを説明した物です。
    * Chrome 25では「ツール→JavaScriptコンソール」
 
-![alt "図2-3"][lesson02-03]
+![alt "図2-5"][lesson02-05]
 
    * Firefox 19では「Web開発→Webコンソール」
 
-![alt "図2-4"][lesson02-04]
+![alt "図2-6"][lesson02-06]
 
 # レッスン３
 
@@ -85,9 +116,12 @@ CoreやrootScene、Spriteの説明をしたのちにまずはクマの画像を�
 
 ## 追加説明
 
-画像ファイルが置いてあるフォルダの補足
+### 画像ファイルフォルダ
+enchant.jsのフォルダの中に「images」という名前のフォルダがあります。
 
-### ■Scene
+このフォルダの中にプログラムに利用できる画像が置いてあります。
+
+### Scene
 Scratchのステージとは違う。ステージとスプライトを合わせたもの？
 
 ### new Core(320, 320)の320についての話。
@@ -99,7 +133,7 @@ Scratchのステージとは違う。ステージとスプライトを合わせ�
 
 もしゲーム投稿サイト9leap.netでゲームを公開したいのであれば320を指定してください。
 
-### ■スプライトの表示位置
+### スプライトの表示位置
 スプライトの表示位置はx座標、y座標という二つの値で指定します。
 
 ゲーム画面においては画面の左上がx=0、y=0の座標となります。この座標は原点ということもあります。
@@ -113,6 +147,10 @@ Scratchのステージとは違う。ステージとスプライトを合わせ�
 スプライトはxの値を増やすと画面の右側へ、yの値を増やすと画面の左側へ移動していきます。
 
 ![alt "図3-1"][lesson03-01]
+
+なお、スプライトに設定する座標はスプライトの左上になります。
+
+図を用意する。
 
 
 ### SpriteをrootSceneに乗せると表現していることの補足
@@ -166,15 +204,41 @@ Spriteのframeを操作することでアニメーションを実現していき
 
 ## 追加説明
 
-### ■フレーム
-フレームの番号の並びをクマのスプライト画像にオーバーラップさせた画像を用意する。
+### フレーム(frame)
+enchant.jsのスプライトは動いているように見える何枚かの画像を一枚の画像にまとめて扱います。
+
+そしてスプライトを用意するときに指定したサイズで切り分けてゲーム画面に表示を行います。
+
+指定サイズで切り分けた画像の一枚一枚をフレームと呼びます。
+
+次のプログラムは画像chara1.pngから横32ピクセル、縦32ピクセルのサイズで画像を切り分けながらスプライトとして表示する例です。
+
+```javascript
+    var bear = new Sprite(32,32);
+    bear.image = core.assets['chara1.png'];
+    bear.frame = 0;
+```
+
+スプライトを表示する際、何番目のフレームを表示するかを指定することができます。
+
+たとえば上のプログラムの bear.frame = 0; の部分が表示するフレーム番号をしているプログラムの例です。
+
+フレーム番号は切り分ける前の画像の左上から右に向かって順番に割り当てられています。
+
+次の画像はドットインストールでも使用しているクマの画像のフレーム番号を説明したものです。
+
+![alt text][lesson05-01]
 
 xの加算値を５へ変更したのはScratchで言うところの○歩うごくに近いことを説明する。
 
-ageの説明補完。動き始めてからのフレーム数とは？
+### ageの説明補完
+動き始めてからのフレーム数とは？
 →別途説明用のプログラムを組んでもよいかもしれない。
 
-マシンの処理速度に依存する点を補足する。
+剰余算の説明が必要か？
+
+パソコンの性能によっては設定したfpsで動作しないことがあります。
+
 
 
 # レッスン６
@@ -388,8 +452,11 @@ gruntの話。
 [lesson02-02]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson02-02.png "図2-2"
 [lesson02-03]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson02-03.png "図2-3"
 [lesson02-04]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson02-04.png "図2-4"
+[lesson02-05]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson02-05.png "図2-5"
+[lesson02-06]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson02-06.png "図2-6"
 [lesson03-01]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson03-01.png "図3-1"
 [lesson04-01]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson04-01.png "図4-1"
 [lesson04-02]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson04-02.png "図4-2"
+[lesson05-01]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson05-01.png "図5-1"
 
 
