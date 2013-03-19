@@ -22,9 +22,8 @@
 *****
 
 # レッスン１
-http://dotinstall.com/lessons/basic_enchant_js_v2/11501
-### ドットインストールで紹介されている内容
-#### #01 enchant.jsとはなにか？
+■ ドットインストールで紹介されている内容
+## [#01 enchant.jsとはなにか？](http://dotinstall.com/lessons/basic_enchant_js_v2/11501 "enchant.jsとはなにか？")
 国産のゲーム開発用フレームワークである **enchant.js** について、その概要、公式サイト、必要となる知識やツールなどを解説していきます。
 * 概要
 * 公式サイト
@@ -32,9 +31,8 @@ http://dotinstall.com/lessons/basic_enchant_js_v2/11501
 * 必要となるツール
 
 # レッスン２
-http://dotinstall.com/lessons/basic_enchant_js_v2/11502
-### ドットインストールで紹介されている内容
-#### #02 開発の準備を進めよう
+■ ドットインストールで紹介されている内容
+## [#02 開発の準備を進めよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11502 "開発の準備を進めよう")
 最新版をダウンロードしたのちに必要なファイルを取り出し、開発の準備を進めていきます。
 * 必要なファイルの準備
 * main.jsの作成
@@ -43,16 +41,16 @@ http://dotinstall.com/lessons/basic_enchant_js_v2/11502
 ## 追加説明
 
 ### プログラム作成用フォルダの用意
+ダウンロードするenchant.jsのファイルを置いたり、自分のプログラムを作る場所としてフォルダを作成します。
 
 ### enchant.jsの最新版をダウンロードするには
-
 enchant.jsの公式ページ http://enchantjs.com/ja/ をブラウザで表示します。
 
 画面の上の方の「Download」をクリックします。次の図の矢印の先です。
 
 ![alt "図2-1"][lesson02-01]
 
-（青いDownloadボタンでもダウンロードページへ移動できるのですが、こちらの方は英語のページへ移動してしまようです。2013/03/19現在）
+    青いDownloadボタンでもダウンロードページへ移動できるのですが、こちらの方は英語のページへ移動してしまようです。2013/03/19現在
 
 ダウンロードページへ移動したら青いDownloadボタンを押すことでダウンロードが始まります。
 
@@ -61,19 +59,18 @@ enchant.jsの公式ページ http://enchantjs.com/ja/ をブラウザで表示�
 ![alt "図2-2"][lesson02-02]
 
 ### ダウンロードしたファイルを使えるようにする
-
 ダウンロードしたファイルをまずは先ほど作成したプログラム作成用のフォルダに移動しましょう。
 
 ダウンロードしたファイルはzipファイルという形式になっています。
 
 このままでは使用できませんので「展開」する必要があります。
 
-zipファイルの展開は、
-
-    * Macではファイルをダブルクリック
-    * Windowsではファイルを右クリックした後に表示されるメニューから「ここへ展開」を選択します。
+以下はzipファイルを展開する操作の例です。
+* Macではファイルをダブルクリック
+* Windowsではファイルを右クリックした後に表示されるメニューから「ここへ展開」を選択します。
 
 ### 自分のプログラム用フォルダの用意
+自分のプログラムを保存するフォルダを作成します。
 
 ### 自分のプログラムを動かす
 index.htmlをブラウザへドラッグ＆ドロップすることで動かすことができます。
@@ -99,9 +96,8 @@ JavaScriptコンソールの開き方は使用しているブラウザによっ�
 ![alt "図2-6"][lesson02-06]
 
 # レッスン３
-http://dotinstall.com/lessons/basic_enchant_js_v2/11503
-### ドットインストールで紹介されている内容
-#### #03 クマを表示してみよう
+■ ドットインストールで紹介されている内容
+## [#03 クマを表示してみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11503 "クマを表示してみよう")
 CoreやrootScene、Spriteの説明をしたのちにまずはクマの画像を表示してみます。
 * Core、rootScene、Sprite
 * Coreの設定
@@ -157,9 +153,8 @@ Scratchと違ってSpriteが最初から表示されているわけではない�
 ゲーム画面の有効範囲がわかりづらいので背景に色をつけてみる話。
 
 # レッスン４
-http://dotinstall.com/lessons/basic_enchant_js_v2/11504
-### ドットインストールで紹介されている内容
-#### #04 クマを動かしてみよう
+■ ドットインストールで紹介されている内容
+## [#04 クマを動かしてみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11504 "クマを動かしてみよう")
 enterframeイベントを使ってクマを移動・回転・拡大させてみます。
 * enterframeイベント
 * 移動
@@ -173,24 +168,30 @@ enterframeイベントを使ってクマを移動・回転・拡大させてみ�
 
 enchant.jsではフレームと言うと大きく二つの意味があります。
 
-レッスン４でのフレームの意味はゲーム画面全体の書き換えのことを表します。
+レッスン４でのフレームの意味はゲーム画面全体を書き換える１セットの操作のことを表します。
 
 レッスン５でもフレームという言葉が出てきますがレッスン４とは違う意味の **フレーム** です。
 
 ### enterframe
 enterframeを無理矢理Scratchで説明すると「ずっと」の中身です。
-次の図の赤い四角の部分です。enchant.jsでは「ずっと」に対応する部分はひとまず気にしなくて大丈夫なようになっています。
+
+イメージとしては次の図の赤い四角の部分です。enchant.jsでは「ずっと」に対応する部分はひとまず気にしなくて大丈夫なようになっています。
 
 ![alt text][lesson04-01]
 
 ### ゲーム画面のはし
-if (this.x > 320) {} についての補足。
+```javascript
+if (this.x > 320) {
+  this.x = 0;
+}
+```
+についての補足です。
 
 これは「もしスプライトの表示位置がゲーム画面の外に出たら○○する」という意味です。
 
 Scratchでいうところの「はしにさわったら」に近いものではあるのですが、でもやっぱり違います。
 
-Scratchで表現すると次のスクリプトが近い動きをすると思います。
+Scratchで近い動きを表現すると次のようなスクリプトになると思います。
 
 ![alt text][lesson04-02]
 
@@ -201,9 +202,8 @@ Scratchで表現すると次のスクリプトが近い動きをすると思い�
 https://github.com/kivatek/EnchantCoordDemo
 
 # レッスン５
-http://dotinstall.com/lessons/basic_enchant_js_v2/11505
-### ドットインストールで紹介されている内容
-#### #05 アニメーションを作ってみよう
+■ ドットインストールで紹介されている内容
+## [#05 アニメーションを作ってみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11505 "アニメーションを作ってみよう")
 Spriteのframeを操作することでアニメーションを実現していきます。
 * Spriteのframe
 * core.fps
@@ -214,9 +214,9 @@ Spriteのframeを操作することでアニメーションを実現していき
 ### フレーム(frame)
 enchant.jsのスプライトは動いているように見える何枚かの画像を一枚の画像にまとめて扱います。
 
-そしてスプライトを用意するときに指定したサイズで切り分けてゲーム画面に表示を行います。
+そしてスプライトをnewするときに指定したサイズで切り分けてゲーム画面に表示を行います。
 
-指定サイズで切り分けた画像の一枚一枚をフレームと呼びます。
+指定サイズで切り分けた画像の一枚一枚をフレームと呼びます。レッスン４で出てきたフレームとは意味が異なります。注意してください。
 
 次のプログラムは画像chara1.pngから横32ピクセル、縦32ピクセルのサイズで画像を切り分けながらスプライトとして表示する例です。
 
@@ -236,7 +236,7 @@ enchant.jsのスプライトは動いているように見える何枚かの画�
 
 ![alt text][lesson05-01]
 
-上の図で９と表示されている箇所に注目してください。
+ところで、上の図で９と表示されている箇所に注目してください。
 
 ここにはクマの画像はありません。ありませんがフレーム番号９として存在します。
 
@@ -257,9 +257,8 @@ enchant.jsのスプライトは動いているように見える何枚かの画�
 
 
 # レッスン６
-http://dotinstall.com/lessons/basic_enchant_js_v2/11506
-### ドットインストールで紹介されている内容
-#### #06 クマを操作してみよう
+■ ドットインストールで紹介されている内容
+## [#06 クマを操作してみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11506 "クマを操作してみよう")
 矢印キーやタッチイベントでクマを動かしてみましょう。
 * 上左右キーの入力
 * Spriteのタッチイベント
@@ -285,9 +284,8 @@ APIドキュメントのEventを見てみることを補足。
 
 
 # レッスン７
-http://dotinstall.com/lessons/basic_enchant_js_v2/11507
-### ドットインストールで紹介されている内容
-#### #07 ラベルを表示してみよう
+■ ドットインストールで紹介されている内容
+## [#07 ラベルを表示してみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11507 "ラベルを表示してみよう")
 ラベルを作成し、経過時間を表示させてみます。
 * ラベルの作成
 * 経過時間の表示
@@ -305,9 +303,8 @@ core.frame / core.fpsについて補足説明。fpsは１秒間に何枚の絵�
 
 
 # レッスン８
-http://dotinstall.com/lessons/basic_enchant_js_v2/11508
-### ドットインストールで紹介されている内容
-#### #08 衝突判定をしてみよう
+■ ドットインストールで紹介されている内容
+## [#08 衝突判定をしてみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11508 "衝突判定をしてみよう")
 もう一つのクマを作り、キャラクター同士の衝突判定をしてみます。
 * enemyの作成
 * intersect
@@ -325,9 +322,8 @@ intersectとwithinの動きを同時に見ることが出来るプログラム�
 https://github.com/kivatek/EnchantCollisionDemo
 
 # レッスン９
-http://dotinstall.com/lessons/basic_enchant_js_v2/11509
-### ドットインストールで紹介されている内容
-#### #09 ゲームオーバー処理をしてみよう
+■ ドットインストールで紹介されている内容
+## [#09 ゲームオーバー処理をしてみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11509 "ゲームオーバー処理をしてみよう")
 ゲームの停止方法、Sceneの作成・追加方法について学びます。
 * Sceneの作成
 * Sceneの表示
@@ -335,18 +331,20 @@ http://dotinstall.com/lessons/basic_enchant_js_v2/11509
 
 ## 追加説明
 
-rootSceneとgameOverSceneの切り替えに関して。
+### rootSceneとgameOverSceneの切り替え
 
 使用する紙芝居？本？カードのデッキ？が変わることを例に挙げて説明か？
 
 pushSceneの動きを図解する。スタックの説明図みたいな感じで。
 
-core.stop()について。9leapに投稿するゲームの場合は使わない。使うのはend。
+### core.stop()について
+9leapに投稿するゲームの場合は使いません。
+
+代わりにcore.end()を使用することで点数やコメントの登録を行えるようになります。
 
 # レッスン１０
-http://dotinstall.com/lessons/basic_enchant_js_v2/11510
-### ドットインストールで紹介されている内容
-#### #10 クラスを作ってみよう
+■ ドットインストールで紹介されている内容
+## [#10 クラスを作ってみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11510 "クラスを作ってみよう")
 Spriteを拡張し、自分でクラスを作る方法を学びます。
 * クラスの作成方法
 * クラスの利用方法
@@ -361,9 +359,8 @@ sceneへの追加はinitializeの中ではなく生成後に明示的に行っ�
 
 
 # レッスン１１
-http://dotinstall.com/lessons/basic_enchant_js_v2/11511
-### ドットインストールで紹介されている内容
-#### #11 クマをたくさん表示させてみよう
+■ ドットインストールで紹介されている内容
+## [#11 クマをたくさん表示させてみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11511 "クマをたくさん表示させてみよう")
 クラスを使ってたくさんのクマを表示させてみます。
 * 乱数生成の関数を作成
 * クラスの変更
@@ -385,20 +382,16 @@ randomの範囲について補足するかどうか。
 この場合はMath.randomの結果をそのまま使ってもいいのではないだろうか？
 
 
-# [レッスン１２](http://dotinstall.com/lessons/basic_enchant_js_v2/11512 "レッスン１２")
-
-### ドットインストールで紹介されている内容
-
-#### #12 Timelineを使ってみよう
+# レッスン１２
+■ ドットインストールで紹介されている内容
+## [#12 Timelineを使ってみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11512 "Timelineを使ってみよう")
 アニメーションに特化したクラス、Timelineを使う方法について学びます。
 * tl.moveBy()
 * enchant.Easing
 * tl.fadeIn() / tl.fadeOut(), tl.loop()
 
 ## 追加説明
-
-easingについての説明。
-http://wise9.github.com/enchant.js/doc/core/ja/symbols/enchant.Easing.html
+easingについての公式サイトでの説明は[こちら](http://wise9.github.com/enchant.js/doc/core/ja/symbols/enchant.Easing.html)です。
 
 Easingの動きの違いがわかるサンプルプログラムを用意しています。
 
@@ -406,7 +399,7 @@ Easingの動きの違いがわかるサンプルプログラムを用意して�
 
 https://github.com/kivatek/EnchantEasingDemo
 
-timelineの指定をつなげて書いていくスタイルについての説明。
+### timelineの指定の書き方
 
 timelineの指定をつなげて書く書き方の例。
 ```javascript
