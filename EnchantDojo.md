@@ -25,6 +25,7 @@
 
 ## [#01 enchant.jsとはなにか？](http://dotinstall.com/lessons/basic_enchant_js_v2/11501 "enchant.jsとはなにか？")
 国産のゲーム開発用フレームワークである **enchant.js** について、その概要、公式サイト、必要となる知識やツールなどを解説していきます。
+
 * 概要
 * 公式サイト
 * 必要となる知識
@@ -34,6 +35,7 @@
 
 ## [#02 開発の準備を進めよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11502 "開発の準備を進めよう")
 最新版をダウンロードしたのちに必要なファイルを取り出し、開発の準備を進めていきます。
+
 * 必要なファイルの準備
 * main.jsの作成
 * 動作確認
@@ -44,13 +46,13 @@
 ダウンロードするenchant.jsのファイルを置いたり、自分のプログラムを作る場所としてフォルダを作成します。
 
 ### enchant.jsの最新版をダウンロードするには
-enchant.jsの公式ページ http://enchantjs.com/ja/ をブラウザで表示します。
+enchant.jsの公式ページ http://enchantjs.com/ja/ をブラウザで表示します。なお ja/ を付けないと英語のページが表示されます。
 
 画面の上の方の「Download」をクリックします。次の図の矢印の先です。
 
 ![alt "図2-1"][lesson02-01]
 
-    青いDownloadボタンでもダウンロードページへ移動できるのですが、こちらの方は英語のページへ移動してしまようです。2013/03/19現在
+    青いDownloadボタンでもダウンロードページへ移動できるのですが、こちらの方は英語のページへ移動してしまうようです。2013/03/19現在
 
 ダウンロードページへ移動したら青いDownloadボタンを押すことでダウンロードが始まります。
 
@@ -59,13 +61,14 @@ enchant.jsの公式ページ http://enchantjs.com/ja/ をブラウザで表示�
 ![alt "図2-2"][lesson02-02]
 
 ### ダウンロードしたファイルを使えるようにする
-ダウンロードしたファイルをまずは先ほど作成したプログラム作成用のフォルダに移動しましょう。
+まずはダウンロードしたファイルを移動します。移動先は先に用意しておいたプログラム作成用のフォルダです。
 
 ダウンロードしたファイルはzipファイルという形式になっています。
 
 このままでは使用できませんので「展開」する必要があります。
 
 以下はzipファイルを展開する操作の例です。
+
 * Macではファイルをダブルクリック
 * Windowsではファイルを右クリックした後に表示されるメニューから「ここへ展開」を選択します。
 
@@ -87,11 +90,12 @@ onloadとは「ファイルが読み込まれたとき」といった意味で�
 ### JavaScriptコンソールの開き方
 JavaScriptコンソールの開き方は使用しているブラウザによって違います。
 以下の図はChromeとFirefoxでどのようにメニューをたどるとコンソールを表示できるかを説明した物です。
-   * Chrome 25では「ツール→JavaScriptコンソール」
+
+* Chrome 25では「ツール→JavaScriptコンソール」
 
 ![alt "図2-5"][lesson02-05]
 
-   * Firefox 19では「Web開発→Webコンソール」
+* Firefox 19では「Web開発→Webコンソール」
 
 ![alt "図2-6"][lesson02-06]
 
@@ -99,6 +103,7 @@ JavaScriptコンソールの開き方は使用しているブラウザによっ�
 
 ## [#03 クマを表示してみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11503 "クマを表示してみよう")
 CoreやrootScene、Spriteの説明をしたのちにまずはクマの画像を表示してみます。
+
 * Core、rootScene、Sprite
 * Coreの設定
 * bearの設定
@@ -108,12 +113,9 @@ CoreやrootScene、Spriteの説明をしたのちにまずはクマの画像を�
 ## 追加説明
 
 ### 画像ファイルフォルダ
-enchant.jsのフォルダの中に「images」という名前のフォルダがあります。
+enchant.jsのフォルダの中に「<font color="blue">images</font>」という名前のフォルダがあります。
 
 このフォルダの中にプログラムに利用できる画像が置いてあります。
-
-### Scene
-Scratchのステージとは違う。ステージとスプライトを合わせたもの？
 
 ### new Core(320, 320)の320についての話。
 これはゲームを作る上でゲーム中に表示するものが見える範囲のサイズを指定しています。
@@ -122,14 +124,19 @@ Scratchのステージとは違う。ステージとスプライトを合わせ�
 
 なお320ではなく好きなサイズを指定することもできます。
 
-もしゲーム投稿サイト9leap.netでゲームを公開したいのであれば320を指定してください。
+ただしゲーム投稿サイト9leap.netでゲームを公開したいのであれば320を指定してください。
+
+### シーンについて
+シーン（Scene）とは、ゲーム画面に表示するものを管理する単位です。
+
+ゲーム画面に表示したいキャラクタはシーンへ登録（addChild）する必要があります。逆に言うと登録しないと表示されません。
 
 ### スプライトの表示位置
 スプライトの表示位置はx座標、y座標という二つの値で指定します。
 
-ゲーム画面においては画面の左上がx=0、y=0の座標となります。この座標は原点ということもあります。
+enchant.jsのゲーム画面においては画面の左上がx=0、y=0の座標となります。この座標は原点とも言います。
 
-このように座標の指定は0から始まるため、320✕320サイズのゲーム画面におさまる座標の最大の値はx=319、y=319です。
+座標の指定は0から始まるため、320✕320サイズのゲーム画面におさまる座標の最大の値はx=319、y=319です。
 
 スプライトが画面内に表示されているかどうかを判定する場合などに備えてこのルールを覚えておいてください。
 
@@ -139,9 +146,14 @@ Scratchのステージとは違う。ステージとスプライトを合わせ�
 
 ![alt "図3-1"][lesson03-01]
 
-なお、スプライトに設定する座標はスプライトの左上になります。
+### Scratchにおける原点
+Scratchでプログラムしていると普段気にすることは少ないと思いますが、原点は存在します。
 
-図を用意する。
+Scratchはenchant.jsとは違いステージ（ゲーム画面）の中央が原点です。
+
+そして次の図のようにx、yの値が変化します。図でも色分けしていますが四つの領域があると覚えておいてください。
+
+![alt "図3-2"][lesson03-02]
 
 
 ### SpriteをrootSceneに乗せると表現していることの補足
@@ -156,6 +168,7 @@ Scratchと違ってSpriteが最初から表示されているわけではない�
 
 ## [#04 クマを動かしてみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11504 "クマを動かしてみよう")
 enterframeイベントを使ってクマを移動・回転・拡大させてみます。
+
 * enterframeイベント
 * 移動
 * 回転（rotate）
@@ -205,6 +218,7 @@ https://github.com/kivatek/EnchantCoordDemo
 
 ## [#05 アニメーションを作ってみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11505 "アニメーションを作ってみよう")
 Spriteのframeを操作することでアニメーションを実現していきます。
+
 * Spriteのframe
 * core.fps
 * Spriteのage
@@ -260,6 +274,7 @@ bear.frame = 0;
 
 ## [#06 クマを操作してみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11506 "クマを操作してみよう")
 矢印キーやタッチイベントでクマを動かしてみましょう。
+
 * 上左右キーの入力
 * Spriteのタッチイベント
 * Coreのタッチイベント
@@ -295,6 +310,7 @@ APIドキュメントのEventを見てみることを補足。
 
 ## [#07 ラベルを表示してみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11507 "ラベルを表示してみよう")
 ラベルを作成し、経過時間を表示させてみます。
+
 * ラベルの作成
 * 経過時間の表示
 
@@ -314,6 +330,7 @@ core.frame / core.fpsについて補足説明。fpsは１秒間に何枚の絵�
 
 ## [#08 衝突判定をしてみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11508 "衝突判定をしてみよう")
 もう一つのクマを作り、キャラクター同士の衝突判定をしてみます。
+
 * enemyの作成
 * intersect
 * within
@@ -333,6 +350,7 @@ https://github.com/kivatek/EnchantCollisionDemo
 
 ## [#09 ゲームオーバー処理をしてみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11509 "ゲームオーバー処理をしてみよう")
 ゲームの停止方法、Sceneの作成・追加方法について学びます。
+
 * Sceneの作成
 * Sceneの表示
 * core.stop()
@@ -370,6 +388,7 @@ sceneへの追加はinitializeの中ではなく生成後に明示的に行っ�
 
 ## [#11 クマをたくさん表示させてみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11511 "クマをたくさん表示させてみよう")
 クラスを使ってたくさんのクマを表示させてみます。
+
 * 乱数生成の関数を作成
 * クラスの変更
 * クマの表示
@@ -394,6 +413,7 @@ randomの範囲について補足するかどうか。
 
 ## [#12 Timelineを使ってみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11512 "Timelineを使ってみよう")
 アニメーションに特化したクラス、Timelineを使う方法について学びます。
+
 * tl.moveBy()
 * enchant.Easing
 * tl.fadeIn() / tl.fadeOut(), tl.loop()
@@ -465,6 +485,7 @@ gruntの話。
 [lesson02-05]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson02-05.png "図2-5"
 [lesson02-06]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson02-06.png "図2-6"
 [lesson03-01]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson03-01.png "図3-1"
+[lesson03-02]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson03-02.png "図3-2"
 [lesson04-01]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson04-01.png "図4-1"
 [lesson04-02]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson04-02.png "図4-2"
 [lesson05-01]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson05-01.png "図5-1"
