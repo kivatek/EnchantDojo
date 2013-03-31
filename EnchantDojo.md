@@ -473,14 +473,21 @@ core.onload = function() {
 }
 ```
 
+## Mapを使って地形の表示
 
 
 ## Groupをうまく使う
-重ね合わせをコントロールする話。
-キャラクタが建物の影に隠れるＲＰＧ風サンプルプログラムの用意。手持ちのコードを再構成する。
+例えばＲＰＧにおいて壁の向こうに人が隠れて表示されるようにしたい場合は、スプライトを単純にaddChildするだけでは表現できません。
 
-Group自体の座標を動かすことでそのGroupにaddChildされているスプライトの表示位置を一気に動かすことができる。
-→メニューや点数表示のレイアウト調整に役立つ
+この様なときにはGroupという機能を使います。
+
+Groupをものすごく乱暴に説明すると絵を表示しないスプライトと言えます。実際絵を表示すること以外はスプライトとだいたい同じことができます。
+
+### Groupのメリット
+* スプライトを目的別に管理しやすい
+* 重ね合わせ表示のコントロールがしやすい
+* メニューや点数表示のレイアウト調整に役立つ
+    * Group自体の座標を動かすことでそのGroupにaddChildされているスプライトの表示位置を一気に動かすことができます。
 
 ## より複雑なtimelineの使い方
 * and()
@@ -491,19 +498,35 @@ Group自体の座標を動かすことでそのGroupにaddChildされている�
 
 ## 9leap.netにゲームを投稿する
 必要になるファイル。
+
 * nineleap.enchant.js
 * start.png
 * end.png
 
-start.png、end.pngを置くフォルダ階層に注意する。
+### 画像ファイルstart.png、end.pngを置くフォルダ
+nineleap.enchant.jsを使用する場合、画像ファイルstart.png、end.pngはソースファイルと同じフォルダに置きます。（次の図はWindows環境での一例です）
 
-zipファイルの作成。
+![alt "図Extra-4"][extra-04]
 
-gruntの話。
+そうしないとアプリの起動に失敗します。（画像ファイルが見つからないことによるエラー）
 
-# 脚注
+### zipファイルの作成
+9leapへのアップロードはzip形式の圧縮ファイルにしてアップロードすることになります。
 
-# 図一覧
+* Windowsの場合はエクスプローラ上でアップロードするファイルを選んで右クリックメニューの「送る→圧縮(zip形式)フォルダー」
+
+![alt "図Extra-5"][extra-05]
+
+* Macの場合はファインダー上でアップロードするファイルを選んで
+
+    本格的な手順となりますがgruntというツールを使うことで圧縮ファイルを作る手順を自動化することができます。
+ただし、ここでの説明は省略させてもらいます。
+
+
+
+-- 脚注
+
+-- 図一覧
 [lesson02-01]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson02-01.png "図2-1"
 [lesson02-02]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson02-02.png "図2-2"
 [lesson02-03]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson02-03.png "図2-3"
@@ -515,5 +538,7 @@ gruntの話。
 [lesson04-01]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson04-01.png "図4-1"
 [lesson04-02]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson04-02.png "図4-2"
 [lesson05-01]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson05-01.png "図5-1"
+[extra-04]: https://github.com/kivatek/EnchantDojo/raw/master/images/extra-04.png "図Extra-4"
+[extra-05]: https://github.com/kivatek/EnchantDojo/raw/master/images/extra-05.png "図Extra-5"
 
 
