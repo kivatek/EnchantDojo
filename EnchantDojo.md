@@ -321,8 +321,6 @@ https://github.com/kivatek/EnchantAgingDemo
 
 むしろcore.rootSceneを届け先とするのはサンプルプログラムなどの特別な場合だけです。
 
-どうするかはエクストラの項目で説明します。
-
 ### 「e」って何？
 eは英語のevent（イベント）の頭文字のeです。
 
@@ -391,7 +389,7 @@ core.frame / core.fpsについて補足説明。fpsは１秒間に何枚の絵�
 
 ## 追加説明
 
-label.textへの代入をコメントアウトしたことで、intersectのif文は残っているのに機能しなくなることを補足。
+label.textへの代入をコメントアウトしたことで、intersectのif文は残っていても実質的に意味がなくなることの補足。
 
 ### デモプログラム
 intersectとwithinの動きを同時に見ることが出来るプログラムを用意しました。
@@ -413,7 +411,7 @@ https://github.com/kivatek/EnchantCollisionDemo
 
 ### rootSceneとgameOverSceneの切り替え
 
-使用する紙芝居？本？カードのデッキ？が変わることを例に挙げて説明か？
+ゲームでよくある例に取るとタイトル画面、ゲーム難易度選択画面、ゲーム本編と切り替わることに相当します。
 
 pushSceneの動きを図解する。スタックの説明図みたいな感じで。
 
@@ -426,6 +424,7 @@ pushSceneの動きを図解する。スタックの説明図みたいな感じ�
 
 ## [#10 クラスを作ってみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11510 "クラスを作ってみよう")
 Spriteを拡張し、自分でクラスを作る方法を学びます。
+
 * クラスの作成方法
 * クラスの利用方法
 
@@ -433,7 +432,7 @@ Spriteを拡張し、自分でクラスを作る方法を学びます。
 
 Bearクラスをcore.onloadの中に記述しているが実際にゲームを作るのであれば外に用意すべきであることを説明。
 
-sceneへの追加はinitializeの中ではなく生成後に明示的に行った方がよいことを補足。
+Sceneへの追加はinitializeの中ではなく生成後に明示的に行った方がよいことを補足。
 
 継承という概念を説明するかどうか。
 
@@ -448,19 +447,20 @@ sceneへの追加はinitializeの中ではなく生成後に明示的に行っ�
 * クマの表示
 
 ## 追加説明
+Math.floorについて簡単な説明図を用意。
 
-Math.floorについて簡単な説明
-
-Math.randomについてはさいころを使った説明。
+Math.randomは最大数を指定出来るさいころ。Scratchにもありますね。
 
 randomの範囲について補足するかどうか。
+
 個人的には(n+1)ではなくて(n)の方がよいと思う。
-それは配列の要素を選ぶような場合を考えると０オリジンで最大値未満の値という感覚を持っておいた方がよいと思うから。
+それは配列の要素を選ぶような場合を考えると０オリジンで最大値未満の値という感覚を持っておいた方がよいと思うからです。
 
 []と使うことで入れ物の用意をしていることを説明。画像としてはクッキーの箱とか？
 
 透明度opacityが0から1の間の値をとるので１００で割るということについて補足。
-この場合はMath.randomの結果をそのまま使ってもいいのではないだろうか？
+
+この場合はMath.randomの結果をそのまま使うのも一つの手です。
 
 
 # レッスン１２
@@ -473,17 +473,26 @@ randomの範囲について補足するかどうか。
 * tl.fadeIn() / tl.fadeOut(), tl.loop()
 
 ## 追加説明
-easingについての公式サイトでの説明は[こちら](http://wise9.github.com/enchant.js/doc/core/ja/symbols/enchant.Easing.html)です。
+Easingを使うことで自分で計算式をプログラムしなくてもスプライトの座標や透明度を簡単に変化させることができます。
 
-Easingの動きの違いがわかるサンプルプログラムを用意しています。
-
-なおサンプルで紹介しているのはたくさん用意されているEasingの一部の種類のみです。
+Easingの動きの違いがわかるサンプルプログラムを用意しました。
 
 https://github.com/kivatek/EnchantEasingDemo
 
-### timelineの指定の書き方
+なおサンプルで紹介しているのはたくさん用意されているEasingの一部の種類のみです。
 
-timelineの指定をつなげて書く書き方の例。
+使用できるEasingの一覧は[こちら](http://wise9.github.com/enchant.js/doc/core/ja/symbols/enchant.Easing.html)です。
+
+    参考リンクとして「cocos2d for iPhone」というゲームフレームワークのEasingの説明ページをご紹介。
+    英語のページですがEasingの値の変化がグラフで説明されています。
+    [こちら](http://www.cocos2d-iphone.org/wiki/doku.php/prog_guide:actions_ease)です。
+
+
+
+### timelineの指定の書き方
+timelineの指定の書き方は大きく二つのパターンがあります。
+
+timelineの指定をつなげて書く書き方の例。（ドットインストールの書き方はこちら）
 ```javascript
 ball.tl.moveTo(80, 240, 48, enchant.Easing.BOUNCE_EASEOUT).
     then(function() {
