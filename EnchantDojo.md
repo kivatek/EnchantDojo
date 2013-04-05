@@ -218,7 +218,7 @@ enterframeを無理矢理Scratchで説明すると「ずっと」の中身です
 
 次のenchant.jsのスクリプトの赤い部分が
 
-![alt "図4-1"][lesson04-0]
+![alt "図4-1"][lesson04-01]
 
 
 次のScratchのスクリプトの赤い四角に対応すると考えてください。
