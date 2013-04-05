@@ -31,6 +31,18 @@
 * 必要となる知識
 * 必要となるツール
 
+## 追加説明
+### 公式サイト
+[こちら](http://enchantjs.com/ja/)
+
+### Scratchとの大きな違い
+Scratchとenchant.jsではとても大きな違いがあります。
+
+* ScratchはScratchという一つの**道具**でプログラムを全て作ることができる
+* enchant.jsではブラウザやテキストエディタやお絵かきツールなどいくつかの**道具**を使うことになる
+
+大変に思えるかもしれませんが道具の使い処が分かってしまえばScratch以上にいろいろなことができる。それがenchant.jsです。
+
 # レッスン２
 
 ## [#02 開発の準備を進めよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11502 "開発の準備を進めよう")
@@ -120,11 +132,20 @@ enchant.jsのフォルダの中に「<font color="blue">images</font>」とい�
 ### new Core(320, 320)の320についての話。
 これはゲームを作る上でゲーム中に表示するものが見える範囲のサイズを指定しています。
 
+コンピュータはピクセル（ドットとも言う）と呼ばれる光の点の集まりで画面に絵や字を表示します。
+
+new Core(320, 320)という指定は横320個、縦320個のピクセルを使うことを意味します。
+
 このドキュメントではこの見える範囲のことをゲーム画面と呼ぶことにします。
 
 なお320ではなく好きなサイズを指定することもできます。
 
 ただしゲーム投稿サイト9leap.netでゲームを公開したいのであれば320を指定してください。
+
+次の写真はあるゲーム機です。写真では黒く写っているいわゆる液晶画面の部分がゲーム画面です。
+
+![alt "図3-1"][lesson03-01]
+
 
 ### シーンについて
 シーン（Scene）とは、ゲーム画面に表示するものを管理する単位です。
@@ -147,7 +168,7 @@ enchant.jsのゲーム画面においては画面の左上がx=0、y=0の座標�
 
 スプライトはxの値を増やすと画面の右側へ、yの値を増やすと画面の左側へ移動していきます。
 
-![alt "図3-1"][lesson03-01]
+![alt "図3-2"][lesson03-02]
 
 ### Scratchにおける原点
 Scratchでプログラムしていると普段気にすることは少ないと思いますが、原点は存在します。
@@ -156,7 +177,7 @@ Scratchはenchant.jsとは違いステージ（ゲーム画面）の中央が原
 
 そして次の図のようにx、yの値が変化します。図でも色分けしていますが四つの領域があると覚えておいてください。
 
-![alt "図3-2"][lesson03-02]
+![alt "図3-3"][lesson03-03]
 
 ### SpriteをrootSceneに乗せると表現していることの補足
 動画の中で「SpriteをrootSceneに乗せる」と言っている箇所があります。
@@ -165,7 +186,11 @@ Scratchはenchant.jsとは違いステージ（ゲーム画面）の中央が原
 
 シーンへ登録するにはaddChildというメソッドを使います。
 
-ちなみにchild（子供）と表現しているのはプログラムでデータを扱うときによく使われる構造に由来する表現です。興味がある人は調べてみてください。
+シーンへ登録することでスプライトがゲーム画面に表示されるようになります。
+
+なおScratchでは見えているかどうかに関わらず全てのスプライトがステージに乗っていると考えてください。ここは大きな違いです。
+
+    ちなみにchild（子供）と表現しているのはプログラムでデータを扱うときによく使われる構造に由来する表現です。興味がある人は調べてみてください。
 
 # レッスン４
 
@@ -569,7 +594,9 @@ nineleap.enchant.jsを使用する場合、画像ファイルstart.png、end.png
 
 ![alt "図Extra-5"][extra-05]
 
-* Macの場合はファインダー上でアップロードするファイルを選んで
+* Macの場合はファインダー上でアップロードするファイルを選んで二本指のタッチをすると開くメニューから「○項目を圧縮」
+
+![alt "図Extra-6"][extra-06]
 
     本格的な手順となりますがgruntというツールを使うことで圧縮ファイルを作る手順を自動化することができます。ただし、ここでの説明は省略させてもらいます。
 
@@ -586,10 +613,12 @@ nineleap.enchant.jsを使用する場合、画像ファイルstart.png、end.png
 [lesson02-06]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson02-06.png "図2-6"
 [lesson03-01]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson03-01.png "図3-1"
 [lesson03-02]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson03-02.png "図3-2"
+[lesson03-03]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson03-03.png "図3-3"
 [lesson04-01]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson04-01.png "図4-1"
 [lesson04-02]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson04-02.png "図4-2"
 [lesson05-01]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson05-01.png "図5-1"
 [extra-04]: https://github.com/kivatek/EnchantDojo/raw/master/images/extra-04.png "図Extra-4"
 [extra-05]: https://github.com/kivatek/EnchantDojo/raw/master/images/extra-05.png "図Extra-5"
+[extra-06]: https://github.com/kivatek/EnchantDojo/raw/master/images/extra-06.png "図Extra-6"
 
 
