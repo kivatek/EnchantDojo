@@ -505,7 +505,11 @@ randomの範囲について補足するかどうか。
 * tl.fadeIn() / tl.fadeOut(), tl.loop()
 
 ## 追加説明
-Easingを使うことで自分で計算式をプログラムしなくてもスプライトの座標や透明度を簡単に変化させることができます。
+### タイムライン(Timeline)とは
+Timelineを使うことで自分で計算式をプログラムしなくてもスプライトの座標や透明度を簡単に変化させることができます。
+
+### イージング(Easing)とは
+Easingとは座標や透明度の変化に一工夫するための計算式です。
 
 Easingの動きの違いがわかるサンプルプログラムを用意しました。
 
@@ -515,11 +519,11 @@ https://github.com/kivatek/EnchantEasingDemo
 
 使用できるEasingの一覧は[こちら](http://wise9.github.com/enchant.js/doc/core/ja/symbols/enchant.Easing.html)です。
 
-    参考リンクとして「cocos2d for iPhone」というゲームフレームワークのEasingの説明ページをご紹介。
-    英語のページですがEasingの値の変化がグラフで説明されています。
-    [こちら](http://www.cocos2d-iphone.org/wiki/doku.php/prog_guide:actions_ease)です。
+### 参考リンク
+「cocos2d for iPhone」というゲームフレームワークのEasingの説明ページをご紹介。
 
-
+英語のページですがEasingの値の変化がグラフで説明されています。
+[こちら](http://www.cocos2d-iphone.org/wiki/doku.php/prog_guide:actions_ease)です。
 
 ### timelineの指定の書き方
 timelineの指定の書き方は大きく二つのパターンがあります。
@@ -539,7 +543,7 @@ ball.tl.moveTo(80, 240, 48, enchant.Easing.BOUNCE_EASEOUT);
 ball.tl.then(function() {
     ball.y = 80;
 });
-ball.loop();
+ball.tl.loop();
 ```
 
 # エクストラ
