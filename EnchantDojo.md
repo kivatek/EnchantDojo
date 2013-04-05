@@ -216,9 +216,16 @@ enterframeイベントを使ってクマを移動・回転・拡大させてみ�
 ### enterframe
 enterframeを無理矢理Scratchで説明すると「ずっと」の中身です。
 
-イメージとしては次の図の赤い四角の部分です。enchant.jsでは「ずっと」に対応する部分はひとまず気にしなくて大丈夫なようになっています。
+次のenchant.jsのスクリプトの赤い部分が
 
-![alt text][lesson04-01]
+![alt "図4-1"][lesson04-0]
+
+
+次のScratchのスクリプトの赤い四角に対応すると考えてください。
+
+![alt "図4-2"][lesson04-02]
+
+なおenchant.jsでは「ずっと」に対応する部分はひとまず気にしなくて大丈夫なようになっています。
 
 ### ゲーム画面のはし
 クマが右側に歩いていって、あるところまで来たら左から登場する動きを表すプログラムについての補足です。
@@ -234,7 +241,7 @@ Scratchでいうところの「はしにさわったら」に近いものでは�
 
 Scratchで近い動きを表現すると次のようなスクリプトになると思います。
 
-![alt text][lesson04-02]
+![alt "図4-3"][lesson04-03]
 
 スプライトの表示位置とゲーム画面の端っこの関係についてのサンプルプログラムを用意しました。
 
@@ -616,6 +623,7 @@ nineleap.enchant.jsを使用する場合、画像ファイルstart.png、end.png
 [lesson03-03]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson03-03.png "図3-3"
 [lesson04-01]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson04-01.png "図4-1"
 [lesson04-02]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson04-02.png "図4-2"
+[lesson04-03]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson04-03.png "図4-3"
 [lesson05-01]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson05-01.png "図5-1"
 [extra-04]: https://github.com/kivatek/EnchantDojo/raw/master/images/extra-04.png "図Extra-4"
 [extra-05]: https://github.com/kivatek/EnchantDojo/raw/master/images/extra-05.png "図Extra-5"
