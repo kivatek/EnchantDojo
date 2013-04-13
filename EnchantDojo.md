@@ -276,6 +276,8 @@ enchant.jsのスプライトは動いているように見える何枚かの画�
 
 enchant.jsでは指定サイズで切り分けた画像の一枚一枚をフレームと呼びます。レッスン４で出てきたフレームとは意味が異なります。注意してください。
 
+一枚一枚のフレームがScratchでのコスチュームだと考えてください。
+
 次のプログラムは画像chara1.pngから横32ピクセル、縦32ピクセルのサイズで画像を切り分けてスプライトとして表示する例です。
 
 ```javascript
@@ -319,9 +321,23 @@ https://github.com/kivatek/EnchantAgingDemo
 
 
 ### 剰余算
-割り算を行ったときの「あまり」そのものを答えとする特別な計算です。
+「%」という記号で計算した答えは、普通の算数の感覚とは違う答えになります。（%は普通にはパーセント・百分率の記号ですがプログラムでは特別な記号として使われます）
 
-    剰余算の説明図準備中
+これは剰余算といって割り算を行ったときに割り切れなかった部分の分子を答えとする特別な計算です。
+
+次の図の赤い○で囲まれた部分が剰余算での答えとなります。
+
+![alt text][lesson05-02]
+
+ちなみに上の図の内容をプログラムで書くと次のようになります。
+
+```javascript
+    answer1 = 1 % 3;	// answer1は1
+    answer2 = 2 % 3;	// answer2は2
+    answer3 = 3 % 3;	// answer3は0
+    answer4 = 4 % 3;	// answer4は1
+```
+
 
 ### 指定したfpsで動かない？
 パソコンの性能によっては設定したfpsで動作しないことがあります。
@@ -375,7 +391,7 @@ enchant.jsではプログラム的に必要な多くのイベントがあらか�
 * ボタンが押されたときに発生するイベントなど
 
 ### 消えたクマの復活
-クリックして消えてしまったクマですが、ドットインストールのサンプルではゲーム画面への登録を解除(removeChild)しているため普通には復活させることはできません。
+クリックして消えてしまったクマですが、ドットインストールのサンプルではゲーム画面への登録を解除(removeChild)しているため普通には再び見えるようにすることはできません。
 
 この点はScratchとの大きな違いです。
 
@@ -399,15 +415,14 @@ Scratchでは隠すことで見えないようにするだけのことですが�
 * 経過時間の表示
 
 ## 追加説明
+### カラー指定
+他の色の文字列の事例。
 
-ラベルとは？テキストとは？
-日常の例を出して説明する。ラベルは写真があった方がいいかも。
+### フォント指定
+他のフォントを指定する文字列。WindowsとMacの違いあることの説明。
 
-カラー指定の他の色の文字列の事例。
-
-フォント指定の他のフォントを指定する文字列。WindowsとMacの違いあることの説明。
-
-core.frame / core.fpsについて補足説明。fpsは１秒間に何枚の絵を使ってぱらぱらアニメをしているかを表す。
+### core.frame / core.fps
+fpsは１秒間に何枚の絵を使ってぱらぱらアニメをしているかを指定します。
 
 
 # レッスン８
@@ -421,7 +436,14 @@ core.frame / core.fpsについて補足説明。fpsは１秒間に何枚の絵�
 
 ## 追加説明
 
-label.textへの代入をコメントアウトしたことで、intersectのif文は残っていても実質的に意味がなくなることの補足。
+### コメント
+プログラムに「//」を書くと、書いた場所より後ろは自由に文章を書くことができます。
+
+プログラムが何を行うものなのかのメモを残すためによく使います。（ドットインストールの動画でも何度も使われています）
+
+このコメントはプログラムの一部を動かないようにすることにも使えます。
+
+動画では2分15秒あたりで「//」をつけていますが、これでコメント扱いにすることで「lable.text = 'hit!';」が動かなくなります。
 
 ### デモプログラム
 intersectとwithinの動きを同時に見ることが出来るプログラムを用意しました。
@@ -429,6 +451,10 @@ intersectとwithinの動きを同時に見ることが出来るプログラム�
 プログラムはちょっと複雑に見えるかもしれませんが、内容はドットインストールで紹介されているものに準じています。
 
 https://github.com/kivatek/EnchantCollisionDemo
+
+このデモプログラムで表示されている白クマの向きは動画での見え方と違います。これはちょっとしたテクニックを使っています。
+
+プログラムソースにはコメントは残していません。興味がある人は調べてみてください。（そしてなぜ表示が変わるのか考えてみてください）
 
 # レッスン９
 
@@ -636,6 +662,7 @@ gruntというツールを使うことで圧縮ファイルを作る手順を自
 [lesson04-02]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson04-02.png "図4-2"
 [lesson04-03]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson04-03.png "図4-3"
 [lesson05-01]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson05-01.png "図5-1"
+[lesson05-02]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson05-02.png "図5-2"
 [extra-04]: https://github.com/kivatek/EnchantDojo/raw/master/images/extra-04.png "図Extra-4"
 [extra-05]: https://github.com/kivatek/EnchantDojo/raw/master/images/extra-05.png "図Extra-5"
 [extra-06]: https://github.com/kivatek/EnchantDojo/raw/master/images/extra-06.png "図Extra-6"
