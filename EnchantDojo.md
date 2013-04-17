@@ -112,6 +112,16 @@ JavaScriptコンソールの開き方は使用しているブラウザによっ�
 
 ![alt "図2-6"][lesson02-06]
 
+> レッスン２のソースコード
+
+```javascript
+enchant();
+
+window.onload = function() {
+	console.log('hello world');
+};
+```
+
 # レッスン３
 
 ## [#03 クマを表示してみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11503 "クマを表示してみよう")
@@ -195,6 +205,29 @@ Scratchはenchant.jsとは違いステージ（ゲーム画面）の中央が原
 
     ちなみにchild（子供）と表現しているのはプログラムでデータを扱うときによく使われる構造に由来する表現です。興味がある人は調べてみてください。
 
+> レッスン３のソースコード
+
+```javascript
+enchant();
+
+window.onload = function() {
+
+	var core = new Core(320, 320);
+	core.preload('chara1.png');
+	core.onload = function() {
+		
+		var bear = new Sprite(32, 32);
+		bear.image = core.assets['chara1.png'];
+		bear.x = 0;
+		bear.y = 0;
+		
+		core.rootScene.addChild(bear);
+	}
+	core.start();
+	
+};
+```
+
 # レッスン４
 
 ## [#04 クマを動かしてみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11504 "クマを動かしてみよう")
@@ -261,6 +294,37 @@ https://github.com/kivatek/EnchantCoordDemo
 これはスプライトの表示位置がスプライトの左上であることが理由です。レッスン３でも少し触れましたがスプライトがゲーム画面内にあるかどうかを判定する場合の重要なルールですのでよく覚えておいてください。
 
     enchant.jsに慣れてくるとスプライト表示を細かく設定できることが分かると思います。興味がある人は調べてみてください。
+
+> レッスン４のソースコード
+
+動画の１分４０秒あたりの動きを再現するソースです。動画では回転や拡大を行う説明が続きます。
+
+```javascript
+enchant();
+
+window.onload = function() {
+
+	var core = new Core(320, 320);
+	core.preload('chara1.png');
+	core.fps = 15;
+	core.onload = function() {
+		
+		var bear = new Sprite(32, 32);
+		bear.image = core.assets['chara1.png'];
+		bear.x = 0;
+		bear.y = 0;
+		
+		bear.addEventListener('enterframe', function() {
+			this.x += 10;
+			if (this.x > 320) this.x = 10;
+		});
+		
+		core.rootScene.addChild(bear);
+	}
+	core.start();
+	
+};
+```
 
 # レッスン５
 ## [#05 アニメーションを作ってみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11505 "アニメーションを作ってみよう")
@@ -346,6 +410,39 @@ answer4 = 4 % 3;	// answer4は1
 パソコンの性能によっては設定したfpsで動作しないことがあります。
 
 最近のパソコンだとあまり気になることはないと思いますが、少し前のパソコンを使っている場合には表示がカクカクする場合があるかもしれません。
+
+> レッスン５のソースコード
+
+動画の２分１０秒あたりの動きを再現するソースです。動画では表示するスプライトを白クマに切り替える説明が続きます。
+
+```javascript
+enchant();
+
+window.onload = function() {
+
+	var core = new Core(320, 320);
+	core.preload('chara1.png');
+	core.fps = 15;
+	core.onload = function() {
+		
+		var bear = new Sprite(32, 32);
+		bear.image = core.assets['chara1.png'];
+		bear.x = 0;
+		bear.y = 0;
+		bear.frame = 0;
+		
+		bear.addEventListener('enterframe', function() {
+			this.x += 10;
+			this.frame = this.age % 3;
+			if (this.x > 320) this.x = 10;
+		});
+		
+		core.rootScene.addChild(bear);
+	}
+	core.start();
+	
+};
+```
 
 # レッスン６
 ## [#06 クマを操作してみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11506 "クマを操作してみよう")
