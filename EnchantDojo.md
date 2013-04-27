@@ -716,6 +716,63 @@ enchant.jsを使って作られたプログラムを停止させる命令です�
 
 なお9leapに投稿するプログラムではcore.stop()の代わりにcore.end()を使用することで点数やコメントの登録を行えるようになります。
 
+> レッスン９のソースコード
+
+```javascript
+enchant();
+
+window.onload = function() {
+
+	var core = new Core(320, 320);
+	core.preload('chara1.png');
+	core.fps = 15;
+	core.onload = function() {
+		
+		var bear = new Sprite(32, 32);
+		bear.image = core.assets['chara1.png'];
+		bear.x = 0;
+		bear.y = 0;
+		
+		bear.addEventListener('enterframe', function() {
+			if (core.input.right) this.x += 5;
+			// intersect
+			if (this.intersect(enemy)) {
+				// label.text = 'hit!';
+			}
+
+			// within
+			if (this.within(enemy, 10)) {
+				// label.text = 'hit!';
+				core.pushScene(gameOverScene);
+				core.stop();
+			}
+			
+		});
+
+		var enemy = new Sprite(32, 32);
+		enemy.image = core.assets['chara1.png'];
+		enemy.x = 80;
+		enemy.y = 0;
+		enemy.frame = 5;
+		
+		var gameOverScene = new Scene();
+		gameOverScene.backgroundColor = 'black';
+
+		var label = new Label();
+		label.x = 280;
+		label.y = 5;
+		label.color = 'red';
+		label.font = '14px "Arial"';
+
+		core.rootScene.addChild(label);
+		core.rootScene.addChild(bear);
+		core.rootScene.addChild(enemy);
+	}
+	core.start();
+	
+};
+```
+
 # レッスン１０
 
 ## [#10 クラスを作ってみよう](http://dotinstall.com/lessons/basic_enchant_js_v2/11510 "クラスを作ってみよう")
@@ -732,6 +789,52 @@ Sceneへの追加はinitializeの中ではなく生成後に明示的に行っ�
 
 継承という概念を説明するかどうか。
 
+> レッスン１０のソースコード
+
+動画の２分１２秒あたりの動きを再現するソースです。動画では表示位置を変更する説明が続きます。
+
+```javascript
+enchant();
+
+window.onload = function() {
+
+	var core = new Core(320, 320);
+	core.preload('chara1.png');
+	core.fps = 15;
+	core.onload = function() {
+		
+/*
+		var bear = new Sprite(32, 32);
+		bear.image = core.assets['chara1.png'];
+		bear.x = 0;
+		bear.y = 0;
+		
+		bear.addEventListener('enterframe', function() {
+			if (core.input.right) this.x += 5;
+		});
+		
+		core.rootScene.addChild(bear);
+*/
+
+		var Bear = Class.create(Sprite, {
+			initialize: function(x, y) {
+				Sprite.call(this, 32, 32);
+				this.x = x;
+				this.y = y;
+				this.image = core.assets['chara1.png'];
+				this.on('enterframe', function() {
+					this.x += 5;
+				});
+				core.rootScene.addChild(this);
+			}
+		});
+		
+		var bear = new Bear(0, 0);
+	}
+	core.start();
+	
+};
+```
 
 # レッスン１１
 
@@ -762,6 +865,62 @@ randomの範囲について補足するかどうか。
 透明度opacityが0から1の間の値をとるので１００で割るということについて補足。
 
 この場合はMath.randomの結果をそのまま使うのも一つの手です。
+
+> レッスン１１のソースコード
+
+動画の１分４４秒あたりの動きを再現するソースです。
+
+```javascript
+enchant();
+
+window.onload = function() {
+
+	var core = new Core(320, 320);
+	core.preload('chara1.png');
+	core.fps = 15;
+	core.onload = function() {
+		
+/*
+		var bear = new Sprite(32, 32);
+		bear.image = core.assets['chara1.png'];
+		bear.x = 0;
+		bear.y = 0;
+		
+		bear.addEventListener('enterframe', function() {
+			if (core.input.right) this.x += 5;
+		});
+		
+		core.rootScene.addChild(bear);
+*/
+
+		var Bear = Class.create(Sprite, {
+			initialize: function(x, y) {
+				Sprite.call(this, 32, 32);
+				this.x = x;
+				this.y = y;
+				this.frame = rand(5);
+				this.opacity = rand(100) / 100;
+				this.image = core.assets['chara1.png'];
+				this.on('enterframe', function() {
+					this.rotate(rand(10));
+				});
+				core.rootScene.addChild(this);
+			}
+		});
+		
+		var bears = [];
+		for (var i = 0; i < 100; i++) {
+			bears[i] = new Bear(rand(320), rand(320));
+		}
+	}
+	core.start();
+	
+};
+
+function rand(n) {
+	return Math.floor(Math.random() * (n+1));
+}
+```
 
 # レッスン１２
 
@@ -813,6 +972,62 @@ ball.tl.then(function() {
     ball.y = 80;
 });
 ball.tl.loop();
+```
+
+> レッスン１２のソースコード
+
+動画の１分１４秒あたりの動きを再現するソースです。動画では更にタイムラインを続けて指定する説明が続きます。
+
+```javascript
+enchant();
+
+window.onload = function() {
+
+	var core = new Core(320, 320);
+	core.preload('chara1.png');
+	core.fps = 15;
+	core.onload = function() {
+		
+/*
+		var bear = new Sprite(32, 32);
+		bear.image = core.assets['chara1.png'];
+		bear.x = 0;
+		bear.y = 0;
+		
+		bear.addEventListener('enterframe', function() {
+			if (core.input.right) this.x += 5;
+		});
+		
+		core.rootScene.addChild(bear);
+*/
+
+		var Bear = Class.create(Sprite, {
+			initialize: function(x, y) {
+				Sprite.call(this, 32, 32);
+				this.x = x;
+				this.y = y;
+				this.frame = rand(5);
+				this.opacity = rand(100) / 100;
+				this.image = core.assets['chara1.png'];
+
+				this.tl.moveBy(rand(100), 0, 40, enchant.Easing.BOUNCE_EASEOUT);
+
+				core.rootScene.addChild(this);
+			}
+		});
+		
+		var bears = [];
+		for (var i = 0; i < 100; i++) {
+			bears[i] = new Bear(rand(320), rand(320));
+		}
+	}
+	core.start();
+	
+};
+
+function rand(n) {
+	return Math.floor(Math.random() * (n+1));
+}
 ```
 
 # エクストラ
