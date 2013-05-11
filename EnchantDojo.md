@@ -745,9 +745,21 @@ window.onload = function() {
 
 ### rootSceneとgameOverSceneの切り替え
 
-ゲームでよくある例に取るとタイトル画面、ゲーム難易度選択画面、ゲーム本編と切り替わることに相当します。
+pushSceneを使用することで、ゲームでよくある例に取るとタイトル画面・ゲーム本編・アイテム選択画面などを切り替えることができます。
 
-    準備中：pushSceneの動きを図解する。
+例えばゲーム開始直後はタイトル画面が表示されているとします。
+
+![alt "図9-1"][lesson09-01]
+
+画面の案内に従ってスクリーンをタッチされたとき、プログラムでタイトル画面に重ねてゲーム本編のシーンをpushします。
+
+動作イメージは次のようになります。内部的にタイトル画面は残っているのですが、目に見えるはゲーム本編です。
+
+![alt "図9-2"][lesson09-02]
+
+タイトル画面はいわば眠っている状態になるだけです。ここでゲーム本編をpopSceneするとタイトル画面に戻ります。popSceneはpushSceneに対応する機能です。
+
+    この動きは一例です。シーンを再利用しないようなケースではpushSceneではなくreplaceSceneという機能を使う方が適切でしょう。
 
 ### core.stop()について
 enchant.jsを使って作られたプログラムを停止させる命令です。
@@ -1175,6 +1187,8 @@ gruntというツールを使うことで圧縮ファイルを作る手順を自
 [lesson04-03]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson04-03.png "図4-3"
 [lesson05-01]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson05-01.png "図5-1"
 [lesson05-02]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson05-02.png "図5-2"
+[lesson09-01]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson09-01.png "図9-1"
+[lesson09-02]: https://github.com/kivatek/EnchantDojo/raw/master/images/lesson09-02.png "図9-2"
 [extra-04]: https://github.com/kivatek/EnchantDojo/raw/master/images/extra-04.png "図Extra-4"
 [extra-05]: https://github.com/kivatek/EnchantDojo/raw/master/images/extra-05.png "図Extra-5"
 [extra-06]: https://github.com/kivatek/EnchantDojo/raw/master/images/extra-06.png "図Extra-6"
