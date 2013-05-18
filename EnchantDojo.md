@@ -285,7 +285,9 @@ Scratchで近い動きを表現すると次のようなスクリプトになる�
 
 そして表示位置がゲーム画面の外に出たら停止するというプログラムになっています。
 
-https://github.com/kivatek/EnchantCoordDemo
+http://kivatek.com/dojo/demo/EnchantCoordDemo/index.html
+
+ソースコードは[こちら](https://github.com/kivatek/EnchantCoordDemo)
 
 それぞれのクマが停止する位置の違いに注目してください。
 
@@ -382,7 +384,10 @@ bear.frame = 0;
 
 サンプルプログラムはこちら。画面左上に表示されている数字がクマスプライトの「age」の値です。
 
-https://github.com/kivatek/EnchantAgingDemo
+http://kivatek.com/dojo/demo/EnchantAgingDemo/index.html
+
+ソースコードは[こちら](https://github.com/kivatek/EnchantAgingDemo)
+
 
 なおスプライトの処理が行われると言うことはゲーム画面へ登録されているということです。逆に言うとスプライトを用意してもゲーム画面に登録していなければ何も行われません。
 
@@ -515,7 +520,9 @@ Scratchでは隠すことで見えないようにするだけのことですが�
 
 ちなみに見えなくなっただけでタッチ操作には反応します。見えないことをうまく使ったテクニックも考えられますし、もしタッチに反応させたくない場合はスプライトの変数touchEnabledをfalseにしてください。
 
-https://github.com/kivatek/EnchantInvisibleSpriteDemo
+http://kivatek.com/dojo/demo/EnchantInvisibleSpriteDemo/index.html
+
+ソースコードは[こちら](https://github.com/kivatek/EnchantInvisibleSpriteDemo)
 
 > レッスン６のソースコード
 
@@ -675,7 +682,9 @@ intersectとwithinの動きを同時に見ることが出来るプログラム�
 
 プログラムはちょっと複雑に見えるかもしれませんが、内容はドットインストールで紹介されているものに準じています。
 
-https://github.com/kivatek/EnchantCollisionDemo
+http://kivatek.com/dojo/demo/EnchantCollisionDemo/index.html
+
+ソースコードは[こちら](https://github.com/kivatek/EnchantCollisionDemo)
 
 ちなみに、このデモプログラムで表示されている白クマの向きは動画での見え方と違います。これはちょっとしたテクニックを使っています。
 
@@ -1004,7 +1013,9 @@ Easingとは座標や透明度の変化に一工夫するための計算式で�
 
 Easingの動きの違いがわかるサンプルプログラムを用意しました。
 
-https://github.com/kivatek/EnchantEasingDemo
+http://kivatek.com/dojo/demo/EnchantEasingDemo/index.html
+
+ソースコードは[こちら](https://github.com/kivatek/EnchantEasingDemo)
 
 なおサンプルで紹介しているのはたくさん用意されているEasingの一部の種類のみです。
 
@@ -1140,7 +1151,9 @@ javascriptのsetTimeout()というメソッドか、またはenchant.jsのタイ
 
 サンプルプログラムを用意しました。
 
-https://github.com/kivatek/EnchantTimeOutDemo
+http://kivatek.com/dojo/demo/EnchantTimeOutDemo/index.html
+
+ソースコードは[こちら](https://github.com/kivatek/EnchantTimeOutDemo)
 
     本ドキュメントでは説明を省略しますがScratchでのスクリプトの書き方とは違う考え方が必要になります。
 
